@@ -1,0 +1,153 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    background-color: #cdcdcd;
+}
+header{
+   
+    height: 50px;
+    background-color: #323232;
+}
+section{
+    margin: 0 auto;
+}
+
+label{
+    float: left;
+    width: 100px;
+    line-height: 50px;
+    font-size: 24px;
+    color:#dddddc ;
+    cursor: pointer;
+
+}
+
+header input{
+    width:60%;
+    float:right;
+    height: 24px;
+    /* 文本块中第一行缩进 */
+    text-indent: 10px;
+    margin-top: 12px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.24), 0 1px 6px rgba(0, 0, 0, 0.45) inset;
+    outline-width: 0;
+
+}
+
+/* 点击文本框的时候没有外边框 */
+input:hover{
+    outline-width: 0;
+}
+
+h2{
+    position: relative;
+}
+
+span{
+    position: absolute;
+    right: 5px;
+    top: 2px;
+    display: inline-block;
+    background-color: #e6e6fa;
+    padding: 0 5px;
+    height: 20px;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    border-radius: 20px;
+    color:#666666 ;
+}
+
+ul, ol{
+    list-style: none;
+    padding: 0;
+}
+li{
+    position: relative;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    border-left: 5px solid #629a9c;
+    background-color: #ffffff;
+    padding: 0 45px;
+  
+}
+li p input{
+    top: 3px;
+    left: 40px;
+    width: 70%;
+    height: 20px;
+    line-height: 14px;
+    text-indent: 5px;
+    font-size: 14px;
+}
+
+li input{
+    left: 10px;
+    top: 5px;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+    cursor: pointer;
+   
+}
+
+p{
+    margin: 0;
+
+}
+
+ol li{
+    cursor: move;
+}
+ul li{
+    border-left: 5px solid #999;
+    opacity: 0.5;
+}
+
+li a{
+    position: absolute;
+    display: inline-block;
+    top: 5px;
+    right: 8px;
+    width: 14px;
+    height: 12px;
+    background-color: #cccccc;
+    border-radius: 14px;
+    border: 6px double #ffffff;
+    color: #ffffff;
+    line-height: 14px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+
+}
+
+footer{
+    color: #666687;
+    font-size: 14px;
+    text-align: center;
+}
+
+footer a{
+   color: #323232;
+   text-decoration: none;
+}
+@media screen and (max-device-width: 620px) {
+    section {
+        width: 96%;
+        padding: 0 2%;
+    }
+}
+@media screen and (min-width:620px){
+    section{
+        width: 600px;
+        padding: 0 10px;
+    }
+}

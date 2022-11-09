@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+ul{
+    margin:100px ;
+}
+
+ul li{
+    float: left;
+    margin: 0 5px;
+    width: 120px;
+    height: 35px;
+    list-style: none;
+    /* 需要给box盒子旋转，也需要透视，加在li 里面的子盒都有透视效果 */
+    perspective: 500px;
+
+}
+
+.box{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+     /* 过渡效果属性 */
+    transition: all .4s;
+}
+
+.front,
+.bottom{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.box:hover{
+    transform: rotateX(90deg);
+}
+
+.front{
+    background-color: aquamarine;
+    z-index: 1;
+    transform: translateZ(17.5px);
+
+}
+.bottom{
+    background-color: pink;
+    /* 这个X轴一定是负值，y轴向下移动 */
+/* 如果有一栋，或者其他样式，必须先写移动的样式 */
+    transform:translateY(17.5px) rotateX(-90deg);
+}

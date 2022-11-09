@@ -1,0 +1,70 @@
+body{
+    background-color:#333333 ;
+}
+.map{
+    position: relative;
+    width: 747px;
+    height: 616px;
+    background:url(/images/map.png) no-repeat;
+    margin: 0 auto;
+}
+
+.dotted{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #0099ff;
+    color: aliceblue;
+}
+.beijing{
+   position: absolute;
+   top: 228px;
+   left: 545px;;  
+}
+.guangdong{
+    position: absolute;
+    top: 528px;
+    left: 545px;;
+ }
+
+ .city div[class^="pulse"]{
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    box-shadow:  0 0 12px #205e85;
+    /*保证我们小波纹在父盒子里面水平垂直居中 放大之后就会中心向四周发散*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /* 谁使用动画谁添加 */
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: pulse 1.2s linear infinite ;
+ }
+/*动画开始延迟的时间*/
+.city div.pulse2
+{
+    animation-delay: 0.4s;
+}
+.city div.pulse3
+{
+    animation-delay: 0.8s;
+}
+
+    @keyframes pulse {
+        0%{}
+        70%{
+            with: 40px;
+            height: 40px;
+            opacity: 1;/* 透明度*/
+
+        }
+        100%{
+            width: 70px;
+            height: 70px;
+            opacity: 0;
+        }
+
+        
+    }
+ 

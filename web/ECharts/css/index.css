@@ -1,0 +1,625 @@
+@media screen and (max-width:1024px){
+    html{
+        /* 1024/24=42.66 */
+        font-size: 42.66px!important;
+    }
+}
+
+@media screen and(min-width:1920px){
+    html{
+        /* 1920/24=80 */
+        font-size: 80px!important;
+    }
+}
+
+/* 1.清楚元素默认的内外边框  盒子模型 */
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    box-sizing: border-box;
+}
+/* 2.让所有斜体 不倾斜   */
+em,i{
+   font-style: normal;
+}
+/* 3.去掉列表前面的小圆点 */
+ul{
+    list-style: none;
+}
+
+/* 4.图片没有边框  去掉图片底侧的空白缝隙    */
+img{
+    border: 0;
+    /* 去掉图片底侧的空白缝隙 */
+    vertical-align: middle;
+}
+/* 5.让button按钮变成小手   */
+button{
+    /* 让按钮变成小手 */
+    cursor: pointer;
+}
+
+/* 6.取消链接的下划线 */
+a{
+    text-decoration: none;
+}
+
+h4{
+    font-weight: 400;
+}
+/* 先插入背景图片 */
+body{
+    background: url(../images/bg.jpg) no-repeat 0 0 / cover;
+    /* 图片大小跟着视口一起缩放 */
+    /* background-size: cover; */
+}
+.viewport{
+    /* 这里的最大宽度和最小宽度单位px不能用rem，否则会失效 */
+    max-width: 1920px;
+    min-width: 1024px;
+    display: flex;
+    margin: 0 auto;
+    padding: 1.1rem .25rem 0;
+    background: url(../images/logo.png) no-repeat 0 0 /contain;
+    /* background-size: contain;图片随着视口一起缩放，且居中显示 */
+    min-height: 780px;
+}
+.viewport .column{
+flex: 3;
+}
+
+.viewport .column:nth-child(2){
+    flex:4;
+    margin: .4rem .25rem 0;
+}
+/* 设置图片边框 */
+.panel{
+    position: relative;
+    /* transparent 为全透明色彩 */
+    border: 15px solid  transparent;
+    /* 边框图片的宽度 */
+    border-width: .6375rem .475rem .25rem 1.65rem;
+    /* 用在边框的图片路径 */
+    border-image-source: url(../images/border.png);
+    /* 图内边框向内偏移 */
+    border-image-slice: 51 38 20 132;
+    margin-bottom:.25rem ;
+}
+
+.panel h3{
+    font-size:0.25rem ;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+.inner{
+position: absolute;
+top: -0.6375rem;
+right: -0.475rem;
+bottom: -0.25rem;
+left: -1.65rem;
+color: azure;
+padding: .3rem .45rem;
+ }
+
+.overview{
+    height: 1.375rem; 
+}
+
+.overview ul{
+    display: flex;
+    justify-content: space-between;
+}
+.overview ul li h4{
+   font-size: .35rem;
+   color: #fefdf8;
+   margin: 0 0 .15rem .06rem;
+}
+.overview ul li span{
+    font-size: .2rem;
+    color:#4c9bfd;
+}
+
+.monitor{
+    height: 6rem;
+}
+.monitor .inner{
+    display: flex;
+    flex-direction: column;
+    padding: .3rem 0;
+}
+.monitor .tabs{
+    display: flex;
+    padding: 0 .45rem;
+    margin-bottom: .25rem;
+}
+.monitor .tabs a{
+    color: #1950c4;
+    font-size: .225rem;
+    padding: 0 .3375rem;
+}
+.monitor .tabs a:first-child{
+   padding-left: 0;
+    border-right: 1px solid #00f2f1;
+}
+
+.monitor .tabs a.active{
+    color: #ffffff;
+}
+
+.monitor .content{
+   flex: 1;
+    position: relative;
+}
+.monitor .head{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #68d8fe;
+    font-size: .175rem;
+    line-height: 1.05;
+    padding: .15rem .45rem;
+}
+
+.monitor .marquee-view{
+    position: absolute;
+    top: .5rem;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+}
+.monitor .marquee-view .row{
+    display: flex;
+    color: #5899e9;
+    font-size: .15rem;
+    justify-content: space-between;
+    line-height: 1.05;
+    padding: .15rem .45rem;
+}
+
+.monitor .row .icon-dot{
+    position: absolute;
+    left: .1875rem;
+    opacity: 0;
+}
+.monitor .row:hover{
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #68d8fe;
+}
+
+.monitor .row:hover .icon-dot{
+    opacity: 1;
+}
+
+.monitor .col:first-child{
+    width: 1rem;
+}
+.monitor .col:nth-child(2){
+    width: 2.5rem;
+   /* white-space是设置如何处理元素内的空白 
+   当文本内容超出容器宽度时， 设置值为nowrap 为不换行 ，
+   */
+   /* 要实现溢出时产生省略号的效果,应该再定义两个样式:
+   强制文本在一行内显示(white-spacing:nowrap;)
+   和溢出内容为隐藏(overflow:hidden;),
+   只有这样才能实现溢出文本显示为省略号的效果。”  */
+   /* “ellipsis:当对象内文本一处时显示省略标记(...) */
+   white-space: nowrap;
+    text-overflow: ellipsis;
+   overflow: hidden;
+}
+.monitor .col:nth-child(3){
+    width: 1rem;
+}
+
+.monitor .marquee{
+animation: move 10s linear infinite;
+}
+
+/* 通过css3动画滚动marquee */
+@keyframes move{
+    0%{
+
+    }
+    100%{
+        transform: translateY(-50%);
+    }
+}
+
+/* 鼠标经过marquee 就停止动画 */
+.monitor .marquee:hover{
+    /* 暂停动画 */
+animation-play-state: paused;
+}
+/* 点位分布统计模块制作 */
+.point{
+    height:4.25rem;
+}
+
+ .point .chart{
+    display: flex;
+    margin-top: 0.3rem;
+    justify-content: space-between;
+}
+.point .pie{
+    width:3.9rem ;
+    height: 3rem;
+    
+    margin-left: -0.125rem;
+}
+.point .data{
+    display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   padding:0.45rem 0.37rem ;
+    width: 2.1rem;
+    box-sizing: border-box;
+    background: url(../images/rect.png) no-repeat;
+    background-size: cover;
+}
+
+.point h4{
+    margin-bottom: .15rem;
+    font-size: .35rem;
+    color: #f0ffff;
+}
+
+.point span{
+    display: block;
+    color: #4c9bfd;
+    font-size:0.2rem;
+}
+
+.map{
+    /* 设置行高就不用去设置padding值了*/
+   
+    display: flex;
+    flex-direction: column;
+    height: 7.225rem;
+    margin-bottom: .25rem;
+}
+
+.map h3{
+    line-height: 1;
+    color: #ffffff;
+    padding: 0.2rem 0;
+    font-size: 0.25rem;
+    font-weight: 400;
+}
+.map .chart{
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/*全国用户总量统计模块 */
+.users{
+    height:4.25rem;
+}
+.users h3{
+    color: #ffffff;
+    font-size: 0.25rem;
+    font-weight: 400;
+}
+.users .chart{
+    display: flex;
+    margin-top: 0.3rem;
+    justify-content: space-between;
+}
+.users .bar{
+    width:7.35rem ;
+    height: 3rem;
+  
+    margin-left: -0.125rem;
+}
+.users .data{
+    display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   padding:0.45rem 0.37rem ;
+    width: 2.1rem;
+    box-sizing: border-box;
+    background: url(../images/rect.png) no-repeat;
+    background-size: cover;
+}
+
+.users h4{
+    margin-bottom: .15rem;
+    font-size: .35rem;
+    color: #f0ffff;
+}
+
+.users span{
+    display: block;
+    color: #4c9bfd;
+    font-size:0.2rem;
+}
+/* 订单模块制作 */
+ .order{
+    height: 1.875rem ;
+ }
+.order .filter {
+    display: flex;
+}
+.order .filter a.active{
+    color: #ffffff;
+    font-size: 0.25rem;
+}
+/* 要给a设置高度与块元素 */
+.order .filter a{
+   display: block;
+   height: 0.225rem;
+   /* 设置行高为1，文字会向上移动 */
+   line-height: 1;
+   padding: 0 .2125rem;
+   color: #1950b9;
+   font-size: 0.225rem;
+    border-right: .025rem solid #00f2f1;
+}
+.order .filter a:first-child{
+    padding-left: 0;
+}
+.order .filter a:last-child{
+    border: 0;
+}
+
+ .order .data{
+    display: flex;
+  margin-top: 0.25rem;
+}
+
+.order .item{
+    width: 50%;
+}
+
+.order .data h4{
+    margin-bottom: .125rem;
+    font-size: .35rem;
+    color: #f0ffff;
+}
+
+.order .data span{
+    display: block;
+    color: #4c9bfd;
+    font-size:0.2rem;
+}
+/* 销售额模块制作 */
+.sales{
+    height: 3.1rem;
+}
+ .sales .caption {
+    display: flex;
+    /* line-height 能使文字往上移动 */
+    line-height: 1; 
+ }
+ .sales .caption h3{
+    /* 要设置高度，不然边框会溢出 */
+    height: 0.225rem;
+    padding-right:0.225rem;
+    border-right: 0.025rem solid #00f2f1;
+ }
+ .sales a{
+   margin: -0.0375rem 0 0 0.2625rem;
+    padding:  0.05rem;
+   font-size: 0.2rem;
+    color: #0bace6;
+    border-radius: 0-0.0375rem;
+ }
+
+ .sales .chart{
+    position: relative;
+    flex: 1;
+    padding-top: 0.1875rem;
+
+ }
+ .sales .label{
+    position: absolute;
+    left: 0.525rem;
+    top: 0.225;
+    font-size: 0.175rem;
+    color:#4996f5 ;
+ }
+ .sales .line{
+    width: 100%;
+    height: 100%;
+ }
+
+ /* 渠道分布以及季度销售进度 */
+ .wrap{
+    display: flex;  
+ }
+ .channel {
+    margin-right: 0.25rem;
+ }
+ .channel, .quarter{
+    flex: 1;
+    height:2.9rem;
+ }
+ .channel .data{
+    overflow: hidden;
+ }
+.channel .data .radar{
+    width: 100%;
+    height: 2.1rem;
+    
+}
+ .quarter .inner{
+    display: flex;
+    flex-direction: column;
+    margin: 0 -0.075rem;
+ }
+ .quarter .chart{
+    flex: 1;
+    padding-top: 0.225rem;
+ }
+ .quarter .box{
+   
+    position: relative;
+ }
+ .quarter .gauge{
+    height: 1.05rem;
+   
+ }
+ .quarter .data{
+    display: flex;
+    justify-content: space-between;
+ }
+
+ .quarter .item{
+    width: 50%;
+}
+
+.quarter .data h4{
+    margin-bottom: .125rem;
+    font-size: .3rem;
+    color: #f0ffff;
+}
+
+.quarter span{
+    display: block;
+    color: #4c9bfd;
+    width: 100%;
+    font-size:0.15rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.quarter .label{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-30%);
+    font-size:0.375rem ;
+}
+
+.quarter .label small{
+    font-size:80%;
+}
+
+/* 全国热榜模块制作 */
+/* 排行榜 */
+.top {
+    height: 3.5rem;
+  }
+  .top .inner {
+    display: flex;
+  }
+  .top .all {
+    display: flex;
+    flex-direction: column;
+    width: 2.1rem;
+    color: #4c9bfd;
+    font-size: 0.175rem;
+    vertical-align: middle;
+  }
+  .top .all ul {
+    padding-left: 0.15rem;
+    margin-top: 0.15rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .top .all li {
+    overflow: hidden;
+  }
+  .top .all [class^="icon-"] {
+    font-size: 0.45rem;
+    vertical-align: middle;
+    margin-right: 0.15rem;
+  }
+  .top .province {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+  }
+  .top .province i {
+    padding: 0 0.15rem;
+    margin-top: 0.0625rem;
+    float: right;
+    font-style: normal;
+    font-size: 0.175rem;
+    color: #0bace6;
+  }
+  
+  .top .province s {
+    display: inline-block;
+    transform: scale(0.8);
+    text-decoration: none;
+  }
+  .top .province .icon-up {
+    color: #dc3c33;
+  }
+  .top .province .icon-down {
+    color: #36be90;
+  }
+  .top .province .data {
+    flex: 1;
+    display: flex;
+    margin-top: 0.175rem;
+  }
+  .top .province ul {
+    flex: 1;
+    line-height: 1;
+    margin-bottom: 0.175rem;
+  }
+  .top .province ul li {
+    display: flex;
+    justify-content: space-between;
+  }
+  .top .province ul span {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .top .province ul.sup {
+    font-size: 0.175rem;
+  }
+  .top .province ul.sup li {
+    color: #4995f4;
+    padding: 0.15rem;
+  }
+  .top .province ul.sup li.active {
+    color: #a3c6f2;
+    background-color: rgba(10, 67, 188, 0.2);
+  }
+  .top .province ul.sub {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 0.15rem;
+    background-color: rgba(10, 67, 188, 0.2);
+  }
+  .top .province ul.sub li {
+    color: #52ffff;
+    padding: 0.125rem 0.175rem;
+  }
+  .clock {
+    position: absolute;
+    top: -0.45rem;
+    right: 0.5rem;
+    font-size: 0.25rem;
+    color: #0bace6;
+  }
+  .clock i {
+    margin-right: 5px;
+    font-size: 0.25rem;
+  }
+  @media screen and (max-width: 1600px) {
+    .top span {
+      transform: scale(0.9);
+    }
+    .top .province ul.sup li {
+      padding: 0.125rem 0.15rem;
+    }
+    .top .province ul.sub li {
+      padding: 0.0625rem 0.15rem;
+    }
+    .quarter span {
+      transform: scale(0.9);
+    }
+  }
+  

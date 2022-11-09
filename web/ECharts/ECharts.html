@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECharts体验</title>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/flexible.js"></script>
+    <style>
+      
+        .box2{
+          width:5.625rem ;
+          height:5.625rem;
+         background-color: #c1c1c1;
+      
+        }
+    </style>
+</head>
+<body>
+    <!-- 步骤1：下载并引入echarts.js文件
+    步骤2：准备一个具备大小的DOM容器
+    步骤3：初始化echart实例化对象
+    步骤4：指定配置项和数据（option）
+    步骤5：将配置项设置为给echarts实例对象 -->
+    <div class="box2"></div>
+    <script>
+        // 把ECharts对象实例化
+        var mychart=echarts.init(document.querySelector(".box2"));
+        // 指定配置项和数据（option）
+       var option = {
+  backgroundColor: '#2c343c',
+  title: {
+    text: 'Customized Pie',
+    left: 'center',
+    top: 20,
+    textStyle: {
+      color: '#ccc'
+    }
+  },
+  tooltip: {
+    trigger: 'item'
+  },
+  visualMap: {
+    show: false,
+    min: 80,
+    max: 600,
+    inRange: {
+      colorLightness: [0, 1]
+    }
+  },
+  series: [
+    {
+      name: 'Access From',
+      type: 'pie',
+      radius: '55%',
+      center: ['50%', '50%'],
+      data: [
+        { value: 335, name: 'Direct' },
+        { value: 310, name: 'Email' },
+        { value: 274, name: 'Union Ads' },
+        { value: 235, name: 'Video Ads' },
+        { value: 400, name: 'Search Engine' }
+      ].sort(function (a, b) {
+        return a.value - b.value;
+      }),
+      roseType: 'radius',
+      label: {
+        color: 'rgba(255, 255, 255, 0.3)'
+      },
+      labelLine: {
+        lineStyle: {
+          color: 'rgba(255, 255, 255, 0.3)'
+        },
+        smooth: 0.2,
+        length: 10,
+        length2: 20
+      },
+      itemStyle: {
+        color: '#c23531',
+        shadowBlur: 200,
+        shadowColor: 'rgba(0, 0, 0, 0.5)'
+      },
+      animationType: 'scale',
+      animationEasing: 'elasticOut',
+      animationDelay: function (idx) {
+        return Math.random() * 200;
+      }
+    }
+  ]
+};
+
+// 将配置项设置为给echarts实例对象
+    mychart.setOption(option);
+    </script>
+</body>
+</html>

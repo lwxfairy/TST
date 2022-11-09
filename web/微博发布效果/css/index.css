@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+
+}
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+.box{
+    width: 600px;
+    padding: 20px;
+    margin: 100px auto;
+    border: 1px solid #000000;
+    /* 不要给盒子添加高度，不然后面添加li的时候盒子不能撑开 */
+}
+.txt{
+    width: 450px;
+    height: 160px;
+    /* outline是轮廓 */
+    outline: none;
+    /* resize用于一个元素是否是有用户调整大小 */
+    resize: none;
+}
+
+ul{
+    /* 因为后面要添加li，所以不需要设置高度 */
+    width: 450px;
+    padding-left: 80px;
+
+    
+}
+li{
+    width: 450px;
+    line-height: 25px;
+    border-bottom: 1px dashed #767676;
+}
+
+ul li a{
+    float: right;
+
+}
+input{
+    float: left;
+}

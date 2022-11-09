@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+
+}
+ul{
+    list-style: none;
+
+}
+a{
+    text-decoration: none;
+
+}
+img{
+    display: block;
+}
+
+.king{
+    width: 852px;
+    margin: 100px auto;
+    /* 引用图片不需要加分号，一定要注意是不是上一级目录，不然会引用失败 */
+    background: url(../images/bg.png) no-repeat;
+    padding: 10px;
+    overflow: hidden;
+
+}
+.king ul{
+    overflow: hidden;
+}
+
+.king li.current{
+    width: 224px;
+}
+.big{
+    display: none;
+    width: 224px;
+}
+.current .small{
+    display: none;
+}
+
+.current .big{
+    display: block;
+}
+
+
+.king li{
+    position: relative;
+    float: left;
+    width: 69px;
+    height: 69px;
+    margin-right: 10px;
+}
+
+.small{
+    position: absolute;
+    width: 69px;
+    height: 69px;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+}

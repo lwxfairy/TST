@@ -1,0 +1,32 @@
+body{
+    background-color: #cccccc;
+}
+
+.bear{
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    background: url(/images/bear.png) no-repeat;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: bear .4s steps(8) infinite ,move 3s forwards;
+}
+
+@keyframes bear {
+    0%{
+        background-position: 0 0;
+
+    }
+    100%{
+        background-position: -1600px 0;
+    }
+}
+
+@keyframes move {
+    0%{
+        left: 0;
+    }
+    100%{
+        left: 50%;
+        transform: translate(-50%);
+    }
+}
